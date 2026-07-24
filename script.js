@@ -56,13 +56,38 @@
   nameInput.addEventListener('input', updateSubmitState);
   guestCountSelect.addEventListener('change', updateAttendanceUI);
 
+  const RSVP_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSevdQh51eCt9Jaj7mmnX_vTJzD0X8KtFRn-yqe6AEIKMyqToQ/formResponse';
+  const RSVP_ENTRY_IDS = {
+    name: 'entry.207878760',
+    attending: 'entry.1820563630',
+    guestCount: 'entry.471949994',
+    plusOneName: 'entry.452103807',
+    note: 'entry.46040072',
+  };
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (!(nameInput.value.trim() && attending)) return;
 
-    // NOTE: no backend/network call wired up yet — connect this to whatever
-    // service (spreadsheet/email/etc.) should receive RSVPs.
     const name = nameInput.value.trim();
+    const params = new URLSearchParams();
+    params.set(RSVP_ENTRY_IDS.name, name);
+    params.set(RSVP_ENTRY_IDS.attending, attending === 'yes' ? 'Katılıyorum' : 'Katılamıyorum');
+    if (attending === 'yes') {
+      params.set(RSVP_ENTRY_IDS.guestCount, guestCountSelect.value === '2' ? '2 Kişi (+1)' : '1 Kişi');
+      if (guestCountSelect.value === '2') {
+        params.set(RSVP_ENTRY_IDS.plusOneName, plusOneInput.value.trim());
+      }
+    }
+    params.set(RSVP_ENTRY_IDS.note, noteInput.value.trim());
+
+    fetch(RSVP_FORM_ACTION, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params.toString(),
+    }).catch(() => {});
+
     confirmationTitle.textContent = `Teşekkürler, ${name}!`;
     form.classList.add('hidden');
     confirmationPanel.classList.remove('hidden');
