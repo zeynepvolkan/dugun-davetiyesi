@@ -119,4 +119,52 @@
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
+
+  const eventStart = new Date('2026-10-03T19:00:00+03:00');
+  const eventEnd = new Date('2026-10-04T00:00:00+03:00');
+  const eventTitle = 'Zeynep & Volkan Düğün';
+  const eventLocation = 'Nazay Bahçe, Murat Reis Mah. Yeni Ocak Sk. No:39, Üsküdar / İstanbul';
+  const eventDetails = 'Zeynep & Volkan\'ın nikah yemeği ve kutlaması. Akış: 19:00 Karşılama & Kokteyl, 20:00 Yemek, 21:00 Kutlama & Dans.';
+
+  function toICSDateUTC(d) {
+    return d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+  }
+
+  const googleCalUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    + '&text=' + encodeURIComponent(eventTitle)
+    + '&dates=' + toICSDateUTC(eventStart) + '/' + toICSDateUTC(eventEnd)
+    + '&details=' + encodeURIComponent(eventDetails)
+    + '&location=' + encodeURIComponent(eventLocation);
+  document.getElementById('cal-google').href = googleCalUrl;
+
+  function icsEscape(text) {
+    return text.replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
+  }
+
+  document.getElementById('cal-ics').addEventListener('click', () => {
+    const icsContent = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Zeynep & Volkan Dugun//TR',
+      'BEGIN:VEVENT',
+      'UID:zeynep-volkan-dugun-2026@dugun-davetiyesi',
+      'DTSTAMP:' + toICSDateUTC(new Date()),
+      'DTSTART:' + toICSDateUTC(eventStart),
+      'DTEND:' + toICSDateUTC(eventEnd),
+      'SUMMARY:' + icsEscape(eventTitle),
+      'DESCRIPTION:' + icsEscape(eventDetails),
+      'LOCATION:' + icsEscape(eventLocation),
+      'END:VEVENT',
+      'END:VCALENDAR',
+    ].join('\r\n');
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'zeynep-volkan-dugun.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
 })();

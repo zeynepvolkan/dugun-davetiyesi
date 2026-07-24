@@ -141,6 +141,36 @@ a:hover { color: oklch(0.42 0.15 40); }
   margin-top: 6px;
 }
 
+/* CALENDAR ACTIONS */
+.calendar-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.btn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: oklch(1 0.005 70);
+  color: oklch(0.48 0.15 40);
+  border: 1px solid oklch(0.48 0.15 40);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-pill-outline:hover {
+  background: oklch(0.97 0.03 55);
+  color: oklch(0.48 0.15 40);
+}
+
 /* CONTENT / CARDS */
 .content {
   max-width: 720px;
