@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zeynep &amp; Volkan — Nikah Davetiyesi</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Nikah Yemeği &amp; Kutlama</div>
+      <h1 class="hero-title">Zeynep <em>&amp;</em> Volkan</h1>
+      <p class="hero-subhead">Hayatımızın en güzel gününde yanımızda olmanızı,<br>sevincimizi bizimle paylaşmanızı isteriz.</p>
+      <img src="assets/masa-cizimi.svg" alt="Yemek masası çizimi" class="hero-illustration">
+      <div class="date-pill">
+        <span class="date-pill-date">3 Ekim 2026</span>
+        <span class="date-pill-dot"></span>
+        <span class="date-pill-day">Cumartesi Akşamı</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="content">
+
+    <!-- PROGRAM -->
+    <section class="card">
+      <div class="eyebrow eyebrow-small">Akış</div>
+      <h2 class="card-title">Akşamın Programı</h2>
+      <div id="program-list"></div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="card">
+      <div class="eyebrow eyebrow-small">Konum</div>
+      <h2 class="card-title">Nazay Bahçe</h2>
+      <p class="address">Murat Reis Mah. Yeni Ocak Sk. No:39<br>Üsküdar / İstanbul</p>
+      <div class="map-frame">
+        <iframe title="Konum haritası" id="map-embed" width="100%" height="260" style="border:0; display:block;" loading="lazy"></iframe>
+      </div>
+      <a id="map-directions" href="#" target="_blank" rel="noopener" class="btn-pill">Haritada Aç</a>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section class="card">
+      <div class="eyebrow eyebrow-small">Kıyafet</div>
+      <h2 class="card-title">Şık Akşam Kıyafeti</h2>
+      <p class="body-copy">Şık ve akşam kutlamasına uygun bir kıyafet tercih edebilirsiniz. Beyaz ve kırık beyaz tonlarını geline bırakmanızı rica ederiz.</p>
+    </section>
+
+    <!-- RSVP -->
+    <section class="card">
+      <div class="eyebrow eyebrow-small">Katılım</div>
+      <h2 class="card-title">Bize Haber Verir misiniz?</h2>
+      <p class="rsvp-subtext">Lütfen 20 Eylül tarihine kadar yanıt verin.</p>
+
+      <div id="rsvp-confirmation" class="confirmation-panel hidden">
+        <div class="confirmation-title" id="confirmation-title">Teşekkürler!</div>
+        <div class="confirmation-body">Yanıtınız alındı. Sizi görmek için sabırsızlanıyoruz.</div>
+      </div>
+
+      <form id="rsvp-form" class="rsvp-form">
+        <div class="field">
+          <label for="rsvp-name">Ad Soyad</label>
+          <input type="text" id="rsvp-name" placeholder="Adınız Soyadınız">
+        </div>
+
+        <div class="field">
+          <label>Katılım Durumu</label>
+          <div class="toggle-row">
+            <button type="button" id="btn-attending-yes" class="toggle-btn">Katılıyorum</button>
+            <button type="button" id="btn-attending-no" class="toggle-btn">Katılamıyorum</button>
+          </div>
+        </div>
+
+        <div class="field hidden" id="field-guest-count">
+          <label for="rsvp-guest-count">Kaç kişi katılacaksınız? (+1 varsa dahil ediniz)</label>
+          <select id="rsvp-guest-count">
+            <option value="1">1 Kişi</option>
+            <option value="2">2 Kişi (+1)</option>
+          </select>
+        </div>
+
+        <div class="field hidden" id="field-plus-one">
+          <label for="rsvp-plus-one">+1'in Adı Soyadı</label>
+          <input type="text" id="rsvp-plus-one" placeholder="Yanınızda getireceğiniz kişinin adı">
+        </div>
+
+        <div class="field">
+          <label for="rsvp-note">Not (opsiyonel)</label>
+          <textarea id="rsvp-note" rows="3" placeholder="Alerjiler, notlar, dilekleriniz..."></textarea>
+        </div>
+
+        <button type="submit" id="rsvp-submit" class="btn-submit" disabled>Yanıtı Gönder</button>
+      </form>
+    </section>
+
+    <div class="footer-line">Sevgiyle bekliyoruz.</div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
