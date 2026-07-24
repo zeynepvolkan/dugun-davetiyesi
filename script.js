@@ -94,4 +94,29 @@
   });
 
   updateAttendanceUI();
+
+  const weddingDate = new Date('2026-10-03T19:00:00+03:00').getTime();
+  const cdDays = document.getElementById('cd-days');
+  const cdHours = document.getElementById('cd-hours');
+  const cdMinutes = document.getElementById('cd-minutes');
+  const cdSeconds = document.getElementById('cd-seconds');
+
+  function pad(n) {
+    return String(n).padStart(2, '0');
+  }
+
+  function updateCountdown() {
+    const diff = Math.max(0, weddingDate - Date.now());
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const minutes = Math.floor((diff % 3600000) / 60000);
+    const seconds = Math.floor((diff % 60000) / 1000);
+    cdDays.textContent = pad(days);
+    cdHours.textContent = pad(hours);
+    cdMinutes.textContent = pad(minutes);
+    cdSeconds.textContent = pad(seconds);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 })();
