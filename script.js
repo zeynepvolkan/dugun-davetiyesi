@@ -1,11 +1,36 @@
 (function () {
   const entryGate = document.getElementById('entry-gate');
   const entryGateBtn = document.getElementById('entry-gate-btn');
-  const spotifyEmbed = document.getElementById('spotify-embed');
+
+  let spotifyController = null;
+  let playRequested = false;
+
+  window.onSpotifyIframeApiReady = (IFrameAPI) => {
+    const element = document.getElementById('spotify-embed');
+    const options = {
+      uri: 'spotify:playlist:2qsWnIKB2HUs1eXHvhvNCs',
+      width: '100%',
+      height: '352',
+    };
+    IFrameAPI.createController(element, options, (EmbedController) => {
+      spotifyController = EmbedController;
+      if (playRequested) {
+        spotifyController.play();
+        playRequested = false;
+      }
+    });
+  };
+
+  const spotifyApiScript = document.createElement('script');
+  spotifyApiScript.src = 'https://open.spotify.com/embed/iframe-api/v1';
+  document.head.appendChild(spotifyApiScript);
 
   entryGateBtn.addEventListener('click', () => {
-    const src = spotifyEmbed.getAttribute('data-src');
-    spotifyEmbed.src = src + (src.includes('?') ? '&' : '?') + 'autoplay=1';
+    if (spotifyController) {
+      spotifyController.play();
+    } else {
+      playRequested = true;
+    }
     document.documentElement.classList.remove('gate-open');
     entryGate.classList.add('entry-gate-hidden');
     setTimeout(() => { entryGate.style.display = 'none'; }, 700);
