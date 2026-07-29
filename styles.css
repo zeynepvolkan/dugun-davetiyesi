@@ -238,6 +238,16 @@ a:hover { color: oklch(0.42 0.15 40); }
   margin-bottom: 22px;
 }
 
+/* MUSIC */
+.spotify-frame {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.spotify-frame iframe {
+  display: block;
+}
+
 .btn-pill {
   display: inline-flex;
   align-items: center;
