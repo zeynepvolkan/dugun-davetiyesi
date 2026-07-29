@@ -82,15 +82,6 @@
       <p class="body-copy">Şık ve akşam kutlamasına uygun bir kıyafet tercih edebilirsiniz. Beyaz ve kırık beyaz tonlarını geline bırakmanızı rica ederiz.</p>
     </section>
 
-    <!-- MUSIC -->
-    <section class="card">
-      <div class="eyebrow eyebrow-small">Müzik</div>
-      <h2 class="card-title">Çalma Listemiz</h2>
-      <div class="spotify-frame">
-        <div id="spotify-embed"></div>
-      </div>
-    </section>
-
     <!-- RSVP -->
     <section class="card">
       <div class="eyebrow eyebrow-small">Katılım</div>
@@ -148,6 +139,10 @@
 
     <div class="footer-line">Sevgiyle bekliyoruz.</div>
   </div>
+
+  <!-- BACKGROUND MUSIC (hidden player + toggle) -->
+  <div id="spotify-embed" class="visually-hidden-audio"></div>
+  <button type="button" id="music-toggle" class="music-toggle" aria-label="Müziği kapat" aria-pressed="false"></button>
 
 <script src="script.js"></script>
 </body>

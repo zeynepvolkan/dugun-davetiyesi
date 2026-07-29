@@ -282,12 +282,36 @@ html.gate-open, html.gate-open body {
 }
 
 /* MUSIC */
-.spotify-frame {
-  border-radius: 14px;
+.visually-hidden-audio {
+  position: fixed;
+  width: 1px;
+  height: 1px;
   overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.spotify-frame iframe {
+.music-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 500;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: none;
+  background: oklch(0.48 0.15 40);
+  color: oklch(1 0 0);
+  box-shadow: 0 2px 10px color-mix(in oklch, oklch(0.25 0.03 50) 25%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.music-toggle svg {
+  width: 20px;
+  height: 20px;
   display: block;
 }
 
