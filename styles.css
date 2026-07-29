@@ -31,17 +31,25 @@ html.gate-open, html.gate-open body {
   background: oklch(0.97 0.018 70);
   padding: 24px;
   text-align: center;
-  transition: opacity 0.6s ease;
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), filter 0.7s ease;
   overflow-y: auto;
 }
 
 .entry-gate.entry-gate-hidden {
   opacity: 0;
+  transform: scale(1.06);
+  filter: blur(6px);
   pointer-events: none;
 }
 
 .entry-gate-inner {
   max-width: 480px;
+  animation: gate-content-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes gate-content-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .entry-gate-photo {
@@ -67,6 +75,16 @@ html.gate-open, html.gate-open body {
   width: auto;
   padding: 16px 40px;
   display: inline-block;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.entry-gate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px color-mix(in oklch, oklch(0.48 0.15 40) 35%, transparent);
+}
+
+.entry-gate-btn:active {
+  transform: translateY(0);
 }
 
 .eyebrow {
@@ -97,6 +115,24 @@ html.gate-open, html.gate-open body {
   margin: 0 auto;
   position: relative;
 }
+
+.hero-inner > * {
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.gate-open .hero-inner > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: none;
+}
+
+.hero-inner > *:nth-child(1) { transition-delay: 0.05s; }
+.hero-inner > *:nth-child(2) { transition-delay: 0.13s; }
+.hero-inner > *:nth-child(3) { transition-delay: 0.21s; }
+.hero-inner > *:nth-child(4) { transition-delay: 0.29s; }
+.hero-inner > *:nth-child(5) { transition-delay: 0.37s; }
+.hero-inner > *:nth-child(6) { transition-delay: 0.45s; }
+.hero-inner > *:nth-child(7) { transition-delay: 0.53s; }
 
 .hero-title {
   font-family: 'Cormorant Garamond', serif;
