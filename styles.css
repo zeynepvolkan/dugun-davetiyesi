@@ -32,6 +32,7 @@ html.gate-open, html.gate-open body {
   padding: 24px;
   text-align: center;
   transition: opacity 0.6s ease;
+  overflow-y: auto;
 }
 
 .entry-gate.entry-gate-hidden {
@@ -41,6 +42,16 @@ html.gate-open, html.gate-open body {
 
 .entry-gate-inner {
   max-width: 480px;
+}
+
+.entry-gate-photo {
+  width: clamp(130px, 32vw, 190px);
+  height: auto;
+  display: block;
+  margin: 0 auto 28px;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px color-mix(in oklch, oklch(0.25 0.03 50) 15%, transparent);
+  object-fit: cover;
 }
 
 .entry-gate-title {
