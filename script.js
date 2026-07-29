@@ -1,4 +1,16 @@
 (function () {
+  const entryGate = document.getElementById('entry-gate');
+  const entryGateBtn = document.getElementById('entry-gate-btn');
+  const spotifyEmbed = document.getElementById('spotify-embed');
+
+  entryGateBtn.addEventListener('click', () => {
+    const src = spotifyEmbed.getAttribute('data-src');
+    spotifyEmbed.src = src + (src.includes('?') ? '&' : '?') + 'autoplay=1';
+    document.documentElement.classList.remove('gate-open');
+    entryGate.classList.add('entry-gate-hidden');
+    setTimeout(() => { entryGate.style.display = 'none'; }, 700);
+  });
+
   const program = [
     { time: '19:00', title: 'Karşılama & Kokteyl', note: 'Bahçede karşılama içecekleri' },
     { time: '20:00', title: 'Yemek', note: '' },
