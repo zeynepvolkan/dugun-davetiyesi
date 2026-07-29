@@ -279,6 +279,19 @@ html.gate-open .hero-inner > * {
   box-shadow: 0 1px 3px color-mix(in oklch, oklch(0.25 0.03 50) 6%, transparent);
 }
 
+.card,
+.footer-line {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card.in-view,
+.footer-line.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .card-title {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
