@@ -29,7 +29,7 @@ html.gate-open, html.gate-open body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: oklch(0.97 0.018 70);
+  background: oklch(0.94 0.025 65);
   padding: 24px;
   text-align: center;
   transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), filter 0.7s ease;
@@ -43,9 +43,28 @@ html.gate-open, html.gate-open body {
   pointer-events: none;
 }
 
-.entry-gate-inner {
+.entry-gate-card {
   max-width: 480px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  background: oklch(1 0.005 70);
+  border: 1px solid oklch(0.82 0.03 55);
+  padding: 12px;
+  box-shadow: 0 24px 60px color-mix(in oklch, oklch(0.25 0.03 50) 22%, transparent);
   animation: gate-content-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.entry-gate-card::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid oklch(0.82 0.03 55);
+  pointer-events: none;
+}
+
+.entry-gate-inner {
+  padding: 40px 28px 36px;
 }
 
 @keyframes gate-content-in {
@@ -53,26 +72,63 @@ html.gate-open, html.gate-open body {
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+.entry-gate-photo-frame {
+  display: inline-block;
+  padding: 8px;
+  background: oklch(1 0.005 70);
+  border: 1px solid oklch(0.86 0.02 60);
+  box-shadow: 0 4px 16px color-mix(in oklch, oklch(0.25 0.03 50) 15%, transparent);
+  margin: 0 auto 24px;
+}
+
 .entry-gate-photo {
-  width: clamp(130px, 32vw, 190px);
+  width: clamp(120px, 30vw, 170px);
   height: auto;
   display: block;
-  margin: 0 auto 28px;
-  border-radius: 18px;
-  box-shadow: 0 4px 16px color-mix(in oklch, oklch(0.25 0.03 50) 15%, transparent);
   object-fit: cover;
 }
 
 .entry-gate-title {
-  font-size: clamp(36px, 8vw, 64px);
+  font-size: clamp(32px, 7vw, 56px);
+}
+
+.entry-gate-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px auto;
+  width: 140px;
+}
+
+.entry-gate-divider span {
+  flex: 1;
+  height: 1px;
+  background: color-mix(in oklch, oklch(0.5 0.14 42) 45%, transparent);
+}
+
+.entry-gate-divider i {
+  width: 6px;
+  height: 6px;
+  transform: rotate(45deg);
+  background: oklch(0.5 0.14 42);
+  flex-shrink: 0;
+}
+
+.entry-gate-date {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: oklch(0.42 0.02 55);
+  margin: 0;
 }
 
 .entry-gate-subhead {
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .entry-gate-btn {
-  margin-top: 32px;
+  margin-top: 28px;
   width: auto;
   padding: 16px 40px;
   display: inline-block;
