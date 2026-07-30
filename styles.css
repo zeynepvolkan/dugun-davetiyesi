@@ -2,6 +2,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -238,6 +239,27 @@ html.gate-open .hero-inner > * {
   gap: 12px;
   margin-top: 32px;
   flex-wrap: wrap;
+}
+
+.calendar-actions-confirmation {
+  margin-top: 20px;
+}
+
+.hero-rsvp-link {
+  display: inline-block;
+  margin-top: 22px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: oklch(0.48 0.15 40);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in oklch, oklch(0.48 0.15 40) 40%, transparent);
+  padding-bottom: 2px;
+}
+
+.hero-rsvp-link:hover {
+  color: oklch(0.42 0.15 40);
 }
 
 .btn-pill-outline {

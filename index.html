@@ -31,6 +31,7 @@
         <span class="date-pill-dot"></span>
         <span class="date-pill-day">Cumartesi Akşamı</span>
       </div>
+      <a href="#rsvp-section" class="hero-rsvp-link">Katılım Bildirin ↓</a>
       <div class="countdown" id="countdown">
         <div class="countdown-item">
           <div class="countdown-number" id="cd-days">00</div>
@@ -48,10 +49,6 @@
           <div class="countdown-number" id="cd-seconds">00</div>
           <div class="countdown-label">Saniye</div>
         </div>
-      </div>
-      <div class="calendar-actions">
-        <a id="cal-google" href="#" target="_blank" rel="noopener" class="btn-pill-outline">Google Takvim'e Ekle</a>
-        <button type="button" id="cal-ics" class="btn-pill-outline">Apple / Outlook (.ics)</button>
       </div>
     </div>
   </section>
@@ -84,7 +81,7 @@
     </section>
 
     <!-- RSVP -->
-    <section class="card">
+    <section class="card" id="rsvp-section">
       <div class="eyebrow eyebrow-small">Katılım</div>
       <h2 class="card-title">Bize Haber Verir misiniz?</h2>
       <p class="rsvp-subtext">Lütfen 20 Eylül tarihine kadar yanıt verin.</p>
@@ -92,6 +89,10 @@
       <div id="rsvp-confirmation" class="confirmation-panel hidden">
         <div class="confirmation-title" id="confirmation-title">Teşekkürler!</div>
         <div class="confirmation-body">Yanıtınız alındı. Sizi görmek için sabırsızlanıyoruz.</div>
+        <div class="calendar-actions calendar-actions-confirmation">
+          <a id="cal-google" href="#" target="_blank" rel="noopener" class="btn-pill-outline">Google Takvim'e Ekle</a>
+          <button type="button" id="cal-ics" class="btn-pill-outline">Apple / Outlook (.ics)</button>
+        </div>
       </div>
 
       <form id="rsvp-form" class="rsvp-form">
