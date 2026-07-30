@@ -1,12 +1,6 @@
 (function () {
   const entryGate = document.getElementById('entry-gate');
   const entryGateBtn = document.getElementById('entry-gate-btn');
-  const musicToggle = document.getElementById('music-toggle');
-
-  const ICON_PLAYING = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 10v4h4l5 5V5L7 10H3z"/><path d="M14.5 4.35v2.06c2.89 1.03 5 3.71 5 6.94s-2.11 5.91-5 6.94v2.06c4.01-1.09 7-4.72 7-9s-2.99-7.91-7-9z"/><path d="M16.5 12c0-1.77-.77-3.29-2-4.24v8.48c1.23-.95 2-2.47 2-4.24z"/></svg>';
-  const ICON_MUTED = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4l-1.88 1.88L12 7.76V4zm4.5 8c0-.65-.13-1.27-.36-1.84l1.45 1.45c.01.13.02.26.02.39a4.5 4.5 0 0 1-.53 2.12l1.45 1.45c.6-1.04.96-2.24.96-3.57 0-3.18-2.11-5.86-5-6.94v2.06c1.71.83 2.91 2.58 2.91 4.63l.1-.75z"/></svg>';
-
-  musicToggle.innerHTML = ICON_MUTED;
 
   let spotifyController = null;
   let playRequested = false;
@@ -20,12 +14,6 @@
     };
     IFrameAPI.createController(element, options, (EmbedController) => {
       spotifyController = EmbedController;
-      spotifyController.addListener('playback_update', (e) => {
-        const playing = !e.data.isPaused;
-        musicToggle.innerHTML = playing ? ICON_PLAYING : ICON_MUTED;
-        musicToggle.setAttribute('aria-pressed', String(playing));
-        musicToggle.setAttribute('aria-label', playing ? 'Müziği kapat' : 'Müziği aç');
-      });
       if (playRequested) {
         spotifyController.play();
         playRequested = false;
@@ -36,12 +24,6 @@
   const spotifyApiScript = document.createElement('script');
   spotifyApiScript.src = 'https://open.spotify.com/embed/iframe-api/v1';
   document.head.appendChild(spotifyApiScript);
-
-  musicToggle.addEventListener('click', () => {
-    if (spotifyController) {
-      spotifyController.togglePlay();
-    }
-  });
 
   entryGateBtn.addEventListener('click', () => {
     if (spotifyController) {

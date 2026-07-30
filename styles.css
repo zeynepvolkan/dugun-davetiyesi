@@ -265,7 +265,7 @@ html.gate-open .hero-inner > * {
 .content {
   max-width: 720px;
   margin: 0 auto;
-  padding: 0 24px 100px;
+  padding: 0 24px 130px;
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -342,36 +342,22 @@ html.gate-open .hero-inner > * {
 }
 
 /* MUSIC */
-.visually-hidden-audio {
+.spotify-bar {
   position: fixed;
-  width: 1px;
-  height: 1px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 400;
+  background: oklch(0.97 0.018 70);
+  border-top: 1px solid oklch(0.9 0.015 65);
+  box-shadow: 0 -2px 10px color-mix(in oklch, oklch(0.25 0.03 50) 8%, transparent);
+  max-width: 480px;
+  margin: 0 auto;
+  border-radius: 14px 14px 0 0;
   overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
 }
 
-.music-toggle {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 500;
-  width: 48px;
-  height: 48px;
-  border-radius: 999px;
-  border: none;
-  background: oklch(0.48 0.15 40);
-  color: oklch(1 0 0);
-  box-shadow: 0 2px 10px color-mix(in oklch, oklch(0.25 0.03 50) 25%, transparent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.music-toggle svg {
-  width: 20px;
-  height: 20px;
+.spotify-bar iframe {
   display: block;
 }
 
