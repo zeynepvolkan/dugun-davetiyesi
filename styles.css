@@ -88,8 +88,8 @@ html.gate-open, html.gate-open body {
   object-fit: cover;
 }
 
-.entry-gate-title {
-  font-size: clamp(32px, 7vw, 56px);
+.entry-gate-title.hero-title {
+  font-size: clamp(26px, 5.5vw, 42px);
 }
 
 .entry-gate-divider {
@@ -123,12 +123,12 @@ html.gate-open, html.gate-open body {
   margin: 0;
 }
 
-.entry-gate-subhead {
+.entry-gate-subhead.hero-subhead {
   margin-top: 20px;
 }
 
-.entry-gate-btn {
-  margin-top: 28px;
+.entry-gate-btn.btn-submit {
+  margin-top: 40px;
   width: auto;
   padding: 16px 40px;
   display: inline-block;
