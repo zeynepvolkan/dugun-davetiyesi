@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 130" fill="none">
+  <line x1="15" y1="114" x2="885" y2="114" stroke="#C99A6E" stroke-width="1" opacity="0.45"/>
+
+  <!-- Kiz Kulesi -->
+  <g transform="translate(75,0)">
+    <ellipse cx="0" cy="113" rx="22" ry="5" fill="#E7B98A" opacity="0.55"/>
+    <rect x="-9" y="55" width="18" height="55" rx="2" fill="#C97B45" opacity="0.8" stroke="#6B4128" stroke-width="1.2"/>
+    <path d="M -12 55 L 0 30 L 12 55 Z" fill="#B5592E" opacity="0.85" stroke="#6B4128" stroke-width="1.2" stroke-linejoin="round"/>
+    <circle cx="0" cy="26" r="2.6" fill="#6B4128"/>
+    <rect x="-3" y="68" width="6" height="9" fill="#6B4128" opacity="0.6"/>
+    <rect x="-3" y="85" width="6" height="9" fill="#6B4128" opacity="0.6"/>
+  </g>
+
+  <!-- Galata Kulesi -->
+  <g transform="translate(225,0)">
+    <rect x="-14" y="60" width="28" height="52" rx="3" fill="#C97B45" opacity="0.8" stroke="#6B4128" stroke-width="1.2"/>
+    <path d="M -16 60 L 0 25 L 16 60 Z" fill="#B5592E" opacity="0.85" stroke="#6B4128" stroke-width="1.2" stroke-linejoin="round"/>
+    <circle cx="-6" cy="76" r="2" fill="#6B4128" opacity="0.7"/>
+    <circle cx="6" cy="76" r="2" fill="#6B4128" opacity="0.7"/>
+    <circle cx="0" cy="92" r="2" fill="#6B4128" opacity="0.7"/>
+    <circle cx="0" cy="20" r="2.2" fill="#6B4128"/>
+  </g>
+
+  <!-- Yali -->
+  <g transform="translate(375,0)">
+    <rect x="-28" y="82" width="56" height="30" fill="#E7B98A" opacity="0.7" stroke="#6B4128" stroke-width="1.2"/>
+    <path d="M -32 82 L 0 58 L 32 82 Z" fill="#B5592E" opacity="0.85" stroke="#6B4128" stroke-width="1.2" stroke-linejoin="round"/>
+    <rect x="-19" y="92" width="9" height="13" fill="#6B4128" opacity="0.55"/>
+    <rect x="-4.5" y="92" width="9" height="13" fill="#6B4128" opacity="0.55"/>
+    <rect x="10" y="92" width="9" height="13" fill="#6B4128" opacity="0.55"/>
+    <path d="M -40 114 Q 0 108 40 114" stroke="#C99A6E" stroke-width="1.2" opacity="0.6"/>
+  </g>
+
+  <!-- Yel degirmeni -->
+  <g transform="translate(525,0)">
+    <path d="M -8 112 L -11 62 L 11 62 L 8 112 Z" fill="#C97B45" opacity="0.8" stroke="#6B4128" stroke-width="1.2" stroke-linejoin="round"/>
+    <path d="M -11 62 L 0 46 L 11 62 Z" fill="#B5592E" opacity="0.85" stroke="#6B4128" stroke-width="1.2" stroke-linejoin="round"/>
+    <g stroke="#6B4128" stroke-width="1.6" stroke-linecap="round">
+      <line x1="0" y1="46" x2="-23" y2="27"/>
+      <line x1="0" y1="46" x2="23" y2="27"/>
+      <line x1="0" y1="46" x2="-23" y2="65"/>
+      <line x1="0" y1="46" x2="23" y2="65"/>
+    </g>
+    <g fill="#E7B98A" opacity="0.8">
+      <rect x="-27" y="20" width="8" height="8" transform="rotate(45 -23 24)"/>
+      <rect x="19" y="20" width="8" height="8" transform="rotate(45 23 24)"/>
+      <rect x="-27" y="58" width="8" height="8" transform="rotate(45 -23 62)"/>
+      <rect x="19" y="58" width="8" height="8" transform="rotate(45 23 62)"/>
+    </g>
+    <rect x="-4" y="98" width="8" height="12" fill="#6B4128" opacity="0.5"/>
+  </g>
+
+  <!-- Zurafa -->
+  <g transform="translate(675,0)">
+    <ellipse cx="4" cy="96" rx="17" ry="10" fill="#C97B45" opacity="0.8" stroke="#6B4128" stroke-width="1.2"/>
+    <path d="M -3 90 C -7 72 -1 58 5 40 L 13 40 C 11 58 9 72 9 90 Z" fill="#C97B45" opacity="0.8" stroke="#6B4128" stroke-width="1.2" stroke-linejoin="round"/>
+    <ellipse cx="10" cy="37" rx="6.5" ry="5.5" fill="#C97B45" opacity="0.8" stroke="#6B4128" stroke-width="1.2"/>
+    <line x1="7" y1="32" x2="6" y2="27" stroke="#6B4128" stroke-width="1.4" stroke-linecap="round"/>
+    <line x1="13" y1="32" x2="14" y2="27" stroke="#6B4128" stroke-width="1.4" stroke-linecap="round"/>
+    <line x1="-6" y1="104" x2="-8" y2="114" stroke="#6B4128" stroke-width="2" stroke-linecap="round"/>
+    <line x1="2" y1="106" x2="1" y2="114" stroke="#6B4128" stroke-width="2" stroke-linecap="round"/>
+    <line x1="9" y1="106" x2="9" y2="114" stroke="#6B4128" stroke-width="2" stroke-linecap="round"/>
+    <line x1="16" y1="104" x2="18" y2="114" stroke="#6B4128" stroke-width="2" stroke-linecap="round"/>
+    <g fill="#6B4128" opacity="0.45">
+      <circle cx="0" cy="92" r="1.6"/>
+      <circle cx="9" cy="98" r="1.6"/>
+      <circle cx="5" cy="65" r="1.4"/>
+      <circle cx="9" cy="52" r="1.4"/>
+    </g>
+  </g>
+
+  <!-- Zeytin dali -->
+  <g transform="translate(825,0)">
+    <path d="M -28 100 Q 0 55 26 35" fill="none" stroke="#6B4128" stroke-width="1.4" stroke-linecap="round"/>
+    <g fill="#8A9A5B" opacity="0.8" stroke="#5C6B3D" stroke-width="0.8">
+      <ellipse cx="-18" cy="88" rx="8" ry="4" transform="rotate(-35 -18 88)"/>
+      <ellipse cx="-6" cy="70" rx="8" ry="4" transform="rotate(-25 -6 70)"/>
+      <ellipse cx="6" cy="55" rx="8" ry="4" transform="rotate(-40 6 55)"/>
+      <ellipse cx="16" cy="42" rx="7" ry="3.6" transform="rotate(-20 16 42)"/>
+      <ellipse cx="-12" cy="78" rx="7" ry="3.6" transform="rotate(30 -12 78)"/>
+      <ellipse cx="0" cy="60" rx="7" ry="3.6" transform="rotate(35 0 60)"/>
+    </g>
+    <g fill="#6B6B3D">
+      <circle cx="-9" cy="82" r="2.4"/>
+      <circle cx="3" cy="64" r="2.4"/>
+      <circle cx="12" cy="48" r="2.2"/>
+    </g>
+  </g>
+</svg>
