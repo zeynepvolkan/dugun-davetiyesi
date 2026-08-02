@@ -37,9 +37,9 @@
   });
 
   const program = [
-    { time: '19:00', title: 'Karşılama & Kokteyl', note: 'Bahçede karşılama içecekleri' },
-    { time: '20:00', title: 'Yemek', note: '' },
-    { time: '21:00', title: 'Kutlama & Dans', note: 'İlk dans ve pistin açılışı' },
+    { time: '19:00', title: 'Karşılama & Kokteyl', note: '' },
+    { time: '20:00', title: 'Yemek & Kutlama', note: '' },
+    { time: '23:00', title: 'Kutlama Sonu', note: '' },
   ];
 
   const programList = document.getElementById('program-list');
@@ -161,7 +161,7 @@
   const eventEnd = new Date('2026-10-04T00:00:00+03:00');
   const eventTitle = 'Zeynep & Volkan Düğün';
   const eventLocation = 'Nazay Bahçe, Murat Reis Mah. Yeni Ocak Sk. No:39, Üsküdar / İstanbul';
-  const eventDetails = 'Zeynep & Volkan\'ın nikah yemeği ve kutlaması. Akış: 19:00 Karşılama & Kokteyl, 20:00 Yemek, 21:00 Kutlama & Dans.';
+  const eventDetails = 'Zeynep & Volkan\'ın nikah yemeği ve kutlaması. Akış: 19:00 Karşılama & Kokteyl, 20:00 Yemek & Kutlama, 23:00 Kutlama Sonu.';
 
   function toICSDateUTC(d) {
     return d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
