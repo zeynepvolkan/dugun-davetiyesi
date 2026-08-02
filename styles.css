@@ -220,7 +220,7 @@ html.gate-open, html.gate-open body {
 /* HERO */
 .hero {
   position: relative;
-  padding: 120px 24px 100px;
+  padding: 64px 24px 100px;
   text-align: center;
   overflow: hidden;
 }
