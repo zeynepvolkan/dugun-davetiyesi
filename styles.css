@@ -159,7 +159,23 @@ html.gate-open, html.gate-open body {
   width: auto;
   padding: 16px 40px;
   display: inline-block;
+  white-space: nowrap;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (max-width: 480px) {
+  .entry-gate-btn.btn-submit {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 14.5px;
+  }
+}
+
+@media (max-width: 340px) {
+  .entry-gate-btn.btn-submit {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
 }
 
 .entry-gate-btn:hover {
